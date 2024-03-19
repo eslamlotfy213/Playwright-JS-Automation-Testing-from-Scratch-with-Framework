@@ -1,0 +1,164 @@
+------------------"Nothing is Impossible. It all depends on how we are Trained on it."-----------------------------------------------------------
+
+Playwright -Modern Testing tool for reliable Web Automation. Support API calls with in UI tests for Smarter Automation
+install node js :
+node.js is open source cross platform back -end javascript
+runtime enviroment to to runs on v9 engine and executes javascript
+install node.js 
+
+
+Create npm project and install playwright dependcies
+- npm init playwright@latest
+
+when run any java script project 
+- pachage.json -> is the default pachage
+
+
+node_modules -> dh el jars
+
+tests -> dg feh kol test cases 
+
+github\workflows  dh fe github actions
+
+
+ahm folder 
+- tests 
+- playwright.config.js
+
+create first file 
+- UItest.spec.js 
+
+Importance of Playwright Test Annotation and async await understandin
+const {test} =require('@playwright/test')
+
+@playwright/test dh anotation from node_modules jars
+
+test dh >  These tests are executed in Playwright environment that launches the browser and provides a fresh page to each test.
+
+
+javascript ? async y3ny kol el step bt run m3 b3d lazem t3mel hold 
+step 1   open browser
+step 2   enter username 
+step 3   click 
+
+keda kol el step  sha8al me b3d 
+
+
+3ashan keda lazem tektb   "await"
+
+
+lzame tektb "async" gmb el function()
+
+
+function() eshma  anymos function mmokeb tejtbha  keda ()=>
+anymos function has no name 5alt code bta3k lightwight
+
+
+
+What is browser context and Page fixtures in Playwright ? - Example
+
+3andea browser context 
+       page fixtures 
+
+
+enta htktb ({browser})
+dh kycreate new fresh browser same as incongito
+    browser.newContext() 
+    context.newPage
+
+
+const context = browser.newContext()      // const dh bt3rf the varialbes 
+all the browsers are on the playwright.config.js files 
+
+1.fresh instance  // newContext
+2.create page  // page
+3.hit any URL goto("")
+
+we have browser - page
+
+------------------browser fixtures --------------------------------------------------------
+
+test("browser test case", async ({browser})=>
+{
+        const context = await browser.newContext(); 
+        const page = await context.newPage();
+        await page.goto("https//www.google.com");
+});
+
+------------------page fixtures --------------------------------------------------------
+
+test("page test case", async ({page})=>
+{
+        await page.goto("https//www.google.com");
+});
+
+
+----------------------Importance of Playwright configuration file and its details to run the tests-----------------
+Folder : Playwright.confign.js
+
+      testDir: './tests',  dh folder elly feh testcases 
+ 
+dh  browsers 
+
+      name: 'chromium',
+ 
+      name: 'firefox',
+
+      name: 'webkit', dh same as safari browser
+
+
+dh reporter files  
+ 
+    reporter: 'html',
+
+
+---------------------------------to run the tests ----------------------------------------
+- npx  playwright test
+
+- npx         dh node 
+- playwright  dh directly point to the playwright module in the node_modules
+- test   dh will trigger the [playwright.config.js] folder 
+
+
+playwright is run by default in headless mode   you need to run --headed 
+
+
+use test.only  to run testcase 
+
+
+expect()
+    await expect(page).toHaveTitle("Google");
+--------------------------to run on headless mode----------------------------------------------------------
+add headless : true on the playwright.config.js 
+
+
+----------------------------------------------
+locator  css  / xpath
+
+if id present 
+   css -> tagname#id   or #id
+if class attribute is present 
+   css -> tagname.class or .class 
+write the css based on any Attribute   
+   css -> [attribute='value']
+write css traversing from parent to child 
+    css -> parenttangname > childtagname
+if needs to write the locator based on text
+text='' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
